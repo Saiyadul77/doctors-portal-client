@@ -23,8 +23,8 @@ const Contact = () => {
                         <label class="input-group input-group-vertical mb-2">
                             <input type="text" placeholder="Subject" class="input input-bordered" />
                         </label>
-                        <label class="input-group input-group-vertical mb-2">
-                            <textarea class="textarea textarea-bordered" placeholder="Bio"></textarea>
+                        <label class="input-group input-group-vertical mb-2 width">
+                            <textarea class="textarea textarea-bordered" placeholder="Your Message"></textarea>
                         </label>
                         <div className='pt-5'>
                             <PrimaryButton>Submit</PrimaryButton>

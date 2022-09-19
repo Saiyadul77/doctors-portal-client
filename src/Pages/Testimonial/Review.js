@@ -9,7 +9,7 @@ const Review = ({ testimonial }) => {
             <div>
                 <div className='flex items-center ml-5'>
                     <div class="avatar">
-                        <div class="w-16 rounded-full ring ring-primary ring-offset-base-100 mr-5">
+                        <div class="w-16 rounded-full ring ring-primary ring-offset-base-100 mr-5 mb-5 ">
                             <img src={testimonial.img} />
                         </div>
                     </div>
