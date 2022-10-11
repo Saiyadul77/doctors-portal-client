@@ -16,15 +16,15 @@ const Contact = () => {
                     <h3 className='text-4xl pb-10 text-white '>Stay connected with us</h3>
                 </div>
                 <div className='flex justify-center items-center'>
-                    <div class="form-control w-2/4 ">
-                        <label class="input-group input-group-vertical mb-2">
-                            <input type="text" placeholder="Email Address" class="input input-bordered" />
+                    <div className="form-control w-2/4 ">
+                        <label className="input-group input-group-vertical mb-2">
+                            <input type="text" placeholder="Email Address" className="input input-bordered" />
                         </label>
-                        <label class="input-group input-group-vertical mb-2">
-                            <input type="text" placeholder="Subject" class="input input-bordered" />
+                        <label className="input-group input-group-vertical mb-2">
+                            <input type="text" placeholder="Subject" className="input input-bordered" />
                         </label>
-                        <label class="input-group input-group-vertical mb-2 width">
-                            <textarea class="textarea textarea-bordered" placeholder="Your Message"></textarea>
+                        <label className="input-group input-group-vertical mb-2 width">
+                            <textarea className="textarea textarea-bordered" placeholder="Your Message"></textarea>
                         </label>
                         <div className='pt-5'>
                             <PrimaryButton>Submit</PrimaryButton>
