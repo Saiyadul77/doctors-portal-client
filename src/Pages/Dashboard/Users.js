@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading/Loading';
 import DataRow from './DataRow';
 
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user',{
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://pure-badlands-39812.herokuapp.com/user',{
         method: 'GET',
         headers:{
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

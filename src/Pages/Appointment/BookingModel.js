@@ -24,7 +24,7 @@ const BookingModel = ({ date, setTreatment, treatment, refetch }) => {
             phone: event.target.phone.value
         }
 
-        fetch('http://localhost:5000/booking', {
+        fetch('https://pure-badlands-39812.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
