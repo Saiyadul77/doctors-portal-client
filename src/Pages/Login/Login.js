@@ -5,6 +5,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import Loading from '../Shared/Loading/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import useToken from '../../hooks/useToken';
 
 
 
@@ -19,6 +20,7 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+    const [token]=useToken(gUser || user)
 
     const navigate = useNavigate();
     let location = useLocation();
@@ -27,10 +29,10 @@ const Login = () => {
     let signInError;
 
     useEffect(() => {
-        if (gUser || user) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [gUser, user, from, navigate])
+    }, [token, from, navigate])
 
     if (gLoading || loading) {
         return <Loading></Loading>
@@ -44,7 +46,7 @@ const Login = () => {
     const onSubmit = (data) => {
         signInWithEmailAndPassword(data.email, data.password)
         sendPasswordResetEmail(data.email)
-        navigate("/appointment")
+        // navigate("/appointment")
     };
 
     return (

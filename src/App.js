@@ -7,6 +7,15 @@ import Login from './Pages/Login/Login';
 import Appointment from './Pages/Appointment/Appointment';
 import SignUp from './Pages/Login/SignUp';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyAppointment from './Pages/Dashboard/MyAppointment';
+import MyReview from './Pages/Dashboard/MyReview';
+import MyHistory from './Pages/Dashboard/MyHistory';
+import Users from './Pages/Dashboard/Users';
+import RequireAdmin from './Pages/RequireAuth/RequireAdmin';
+import NotFound from './Pages/NotFound/NotFound';
 
 
 function App() {
@@ -20,10 +29,22 @@ function App() {
             <Appointment />
           </RequireAuth>
         } />
+        <Route path="dashboard" element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        } >
+          <Route index element={<MyAppointment></MyAppointment>}/>
+          <Route path='review' element={<MyReview></MyReview>}/>
+          <Route path='history' element={<MyHistory></MyHistory>}/>
+          <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}/>
+        </Route>
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
