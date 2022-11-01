@@ -10,12 +10,11 @@ import Service from './Service';
 const AppointmentService = ({ date }) => {
     // const [services, setServices] = useState([]);
     const [treatment, setTreatment]=useState(null);
-    const formatedDate= format(date, 'PP');
+    const formatedDate= format(date, 'PP')
 
     const { isLoading, error, data:services, refetch } = useQuery(['available', formatedDate], () =>
-    fetch(`https://pure-badlands-39812.herokuapp.com/available?date=${formatedDate}`).then(res =>
-      res.json()
-    )
+    fetch(`https://pure-badlands-39812.herokuapp.com/available?date=${formatedDate}`)
+    .then(res =>res.json())
   )
   if(isLoading){
     return <Loading></Loading>
