@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 
 const BookingModel = ({ date, setTreatment, treatment, refetch }) => {
-    const { _id, name, slots } = treatment;
+    const { _id, name, slots, price } = treatment;
     const [user, loading, error] = useAuthState(auth);
     const formatedDate = format(date, "PP");
 
@@ -19,6 +19,7 @@ const BookingModel = ({ date, setTreatment, treatment, refetch }) => {
             treatment: name,
             date: formatedDate,
             slot,
+            price,
             patient: user.email,
             patientName: user.displayName,
             phone: event.target.phone.value
